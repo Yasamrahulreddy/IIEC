@@ -1,0 +1,67 @@
+<style>
+
+div#d2{
+    border: 5px solid red;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px ;
+    transform: rotateY(180deg);
+}
+
+
+</style>
+
+<script>
+    i=0;
+
+
+function mymove(){
+
+    if (i<=200){
+        var r1=document.getElementById('d2');
+        r1.style.left=i;
+        r1.style.width=100 +i;
+        r1.style.height=100+i;
+        r1.style.bottom=i;
+        // r1.style.transform="rotateY(90deg)";
+
+        i++;
+        setTimeout(mymove,1);
+
+    }
+
+    else{
+        r1.style.left=i;
+        r1.style.width=100 +i;
+        r1.style.height=100+i;
+        r1.style.bottom=i;
+
+        i--;
+    }
+    }
+
+    function lw(){
+        var r=document.getElementById('d3');
+        r.style.border="5px solid blue"
+        r.style.width="100px";
+        r.style.height="100px";
+    }
+
+    function lw1(){
+
+        var r=document.getElementById('d3');
+        r.style.border="2px dotted blue"
+        r.style.width="50px";
+        r.style.height="50px";
+
+    }
+
+</script>
+<div id="d1">  mydiv 1 </div>
+
+<div id="d2" onmouseover="">mydiv 2 </div>
+<div id="d3" onmouseout="">  mydiv 3 </div>
+
+<p onclick="mymove()">para 1</p>
